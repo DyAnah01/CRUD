@@ -1,7 +1,7 @@
 <?php require_once('../controller/agenceController.php') ?>
 <?php require_once('../controller/vehiculeController.php');?>
 <?php require_once('./header.php');?>
-  <h2>GESTION DES AGENCES </h2>
+
     <!--SELECT (READ) -->
     <table class="table my-5 table1">
       <thead>

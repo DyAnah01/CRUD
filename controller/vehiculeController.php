@@ -32,13 +32,23 @@ class Vehicule
 
     } //fin function connection with database
 
-    public function addveVehicule($values){
+    public function addVehicule($values){
         // CREATE => INSERT INTO
-        $request = $this->pdo()->prepare("INSERT INTO vehicule VALUES (NULL, :titre, :marque, :modele, :description, :photo, :prix INNER JOIN ville ON agences.id_agence = vehicule.id_agence)");
+        $request = $this->pdo()->prepare("INSERT INTO vehicule 
+        VALUES (NULL, :titre, :marque, :modele, :description, :photo, :prix 
+        INNER JOIN ville, id_agence 
+        ON agences.id_agence = vehicule.id_agence)");
         
-        
+        $request->bindParam(':titre',$values['titre']);
+        $request->bindParam(':marque',$values['marque']);
+        $request->bindParam(':modele',$values['modele']);
+        $request->bindParam(':description',$values['description']);
+        $request->bindParam(':photo',$values['photo']);
+        $request->bindParam(':prix',$values['prix']);
+        // $request->bindParam(':ville',$values['ville']);
 
-    }//Fin function 
+        $request->execute();
+    }//Fin function addVehicule (Create)
 
     public function showVehicule(){
         //READ => SELECT
@@ -60,7 +70,10 @@ class Vehicule
 
     }
 
-
-
-
 } //Fin class Vehicule
+
+// create object vehicule1
+$vehicule1 = new Vehicule;
+// appeler la fonction addVehicule:
+if(isset($_POST['valider_vehicule'])) $vehicule1->addVehicule($_POST);
+var_dump($_POST);
