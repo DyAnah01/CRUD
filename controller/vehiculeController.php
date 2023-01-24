@@ -8,7 +8,7 @@ class Vehicule
     const USER = 'root';
     const PASSWORD = '';
 
-    public function pdo() //fonction connection avec la base de donnée
+    public function pdo() //function connection with database
     {
         if (!$this->sql)
         {
@@ -22,13 +22,45 @@ class Vehicule
                         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
                     )
                 );
-            } catch (Exception $error) {
+            } 
+            catch (Exception $error) 
+            {
                 die("Probleme connexion : " . $error->getMessage());
             }     
         }
-        return $this->sql; //on retourne l'objet SQL (pdo)
+        return $this->sql; // return the object SQL (pdo)
 
-    } //fin fonction connection avec la base de donnée
+    } //fin function connection with database
+
+    public function addveVehicule($values){
+        // CREATE => INSERT INTO
+        $request = $this->pdo()->prepare("INSERT INTO vehicule VALUES (NULL, :titre, :marque, :modele, :description, :photo, :prix INNER JOIN ville ON agences.id_agence = vehicule.id_agence)");
+        
+        
+
+    }//Fin function 
+
+    public function showVehicule(){
+        //READ => SELECT
+
+    }
+
+    public function deleteVehicule(){
+        //DELETE => DELETE
+
+    }
+
+    public function detailVehicule(){
+        //READ but just one (more information about one vehicule) => SELECT
+
+    }
+
+    public function updateVehicule(){
+        //UPDATE
+
+    }
 
 
-}
+
+
+} //Fin class Vehicule

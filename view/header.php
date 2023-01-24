@@ -45,8 +45,9 @@
 
   <?php 
   $actions = isset($_GET['actions']) ? $_GET['actions'] : null;
+  if($actions == 'affichepageacceuil') header('Location: Accueil.php');
   if($actions == 'affichepageagence') header('Location: Agence.php');
   if($actions == 'affichepagevehicule') header('Location: Vehicule.php');
-  if($actions == 'affichepageacceuil') header('Location: Accueil.php');
+
 
   ?>

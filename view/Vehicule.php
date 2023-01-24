@@ -7,23 +7,30 @@
     <form method="post" class="mt-2 mb-5">
 
         <label for="">Titre</label>
-        <input type="text" id="" name="" placeholder="Vehicule" class="mb-2">
+        <input type="text" id="" name="ville" placeholder="Titre de l'annonce" class="mb-2">
+
+        <label for="">Marque</label>
+        <input type="text" name="" placeholder="Marque" class="mb-2">
+
+        <label for="">Model</label>
+        <input type="text" name="" placeholder="Model" class="mb-2">
+
+        <label for="">Prix</label>
+        <input type="text" name="" placeholder="Prix journalier" class="mb-2">
+
+        <label for="">Photo</label>
+        <input type="text" name="" placeholder="Ajouter l'url de l'image" class="mb-2">          
 
         <label for="">Description</label>
         <textarea name="" id="" cols="30" rows="10" placeholder="Description" class="mb-2"></textarea>     
 
-        <label for="">Photo</label>
-        <input type="text" name="" placeholder="Ajouter l'url de l'image" class="mb-2">      
-
-        <label for="">Adresse</label>
-        <input type="text" name="" placeholder="Adresse" class="mb-2">
-
-        <label for="">Ville</label>
-        <input type="text" name="" placeholder="Ville" class="mb-2">
-
-      <button name="" class="mb-2">Enregistrer</button>
+      <button name="valider_vehicule" class="mb-2">Enregistrer</button>
     </form>
     <!--FIN ADD (INSERT INTO)-->
+
+
+
+
 
 
 
