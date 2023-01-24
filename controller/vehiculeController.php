@@ -8,7 +8,7 @@ class Vehicule
     const USER = 'root';
     const PASSWORD = '';
 
-    public function pdo()
+    public function pdo() //fonction connection avec la base de donnée
     {
         if (!$this->sql)
         {
