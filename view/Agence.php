@@ -37,13 +37,19 @@
     <!--FIN SELECT (READ)-->
     <!--ADD (INSERT INTO)-->
     <form method="post" class="mt-2 mb-5">
+      <label for="">Titre</label>
       <input type="text" name="titre" placeholder="Titre" class="mb-2">
+      <label for="">Adresse</label>
       <input type="text" name="adresse" placeholder="Adresse" class="mb-2">
+      <label for="">Ville</label>
       <input type="text" name="ville" placeholder="ville" class="mb-2">
+      <label for="">Code postal</label>
       <input type="number" name="cp" placeholder="Code postal" class="mb-2">
+      <label for="">Description</label>
       <textarea name="description" id="description" cols="30" rows="10" placeholder="Description" class="mb-2"></textarea>
+      <label for="">Photo</label>
       <input type="text" name="photo" placeholder="Ajouter l'url de l'image" class="mb-2">
-      <button name="valider_agence" class="mb-2">Valider</button>
+      <button name="valider_agence" class="mb-2">Enregistrer</button>
     </form>
     <!--FIN ADD (INSERT INTO)-->
 

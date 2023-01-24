@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item mx-5">
-          <a class="nav-link active" aria-current="page" href="Agence.php?actions=affichepageagence">Accueil</a>
+          <a class="nav-link active" aria-current="page" href="Accueil.php?actions=affichepageacceuil">Accueil</a>
         </li>
         <li class="nav-item mx-5">
           <a class="nav-link" href="Agence.php?actions=affichepageagence">Gestion des Agences</a>
@@ -47,7 +47,6 @@
   $actions = isset($_GET['actions']) ? $_GET['actions'] : null;
   if($actions == 'affichepageagence') header('Location: Agence.php');
   if($actions == 'affichepagevehicule') header('Location: Vehicule.php');
+  if($actions == 'affichepageacceuil') header('Location: Accueil.php');
 
-  
-  
   ?>

@@ -10,7 +10,7 @@
         <input type="text" id="" name="" placeholder="Vehicule" class="mb-2">
 
         <label for="">Description</label>
-        <textarea name="" id="" cols="30" rows="10" placeholder="" class="mb-2"></textarea>     
+        <textarea name="" id="" cols="30" rows="10" placeholder="Description" class="mb-2"></textarea>     
 
         <label for="">Photo</label>
         <input type="text" name="" placeholder="Ajouter l'url de l'image" class="mb-2">      
