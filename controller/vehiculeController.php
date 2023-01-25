@@ -35,16 +35,16 @@ class Vehicule
     public function addVehicule($values){
         // CREATE => INSERT INTO
         $request = $this->pdo()->prepare("INSERT INTO vehicule 
-        VALUES (NULL, :id_agence, :titre, :marque, :modele, :description, :photo, :prix_journalier)");
-        // ("SELECT ville FROM agences INNER JOIN vehicule ON agences.id_agence = vehicule.id_agence; ");
+        VALUES (NULL, :id_agence, :titre_vehicule, :marque_vehicule, :modele_vehicule, :description_vehicule, :photo_vehicule, :prix_journalier)");
+
         $request->bindParam(':id_agence',$values['id_agence']);
-        $request->bindParam(':titre',$values['titre']);
-        $request->bindParam(':marque',$values['marque']);
-        $request->bindParam(':modele',$values['modele']);
-        $request->bindParam(':description',$values['description']);
-        $request->bindParam(':photo',$values['photo']);
+        $request->bindParam(':titre_vehicule',$values['titre_vehicule']);
+        $request->bindParam(':marque_vehicule',$values['marque_vehicule']);
+        $request->bindParam(':modele_vehicule',$values['modele_vehicule']);
+        $request->bindParam(':description_vehicule',$values['description_vehicule']);
+        $request->bindParam(':photo_vehicule',$values['photo_vehicule']);
         $request->bindParam(':prix_journalier',$values['prix_journalier']);
-         
+
         $request->execute();
     }//Fin function addVehicule (Create)
 
@@ -61,10 +61,14 @@ class Vehicule
 
     public function showVehicule(){
         //READ => SELECT
-
+        $request = $this->pdo()->prepare("SELECT id_vehicule, ville, titre_vehicule, marque_vehicule, modele_vehicule, description_vehicule, photo_vehicule, prix_journalier FROM vehicule INNER JOIN agences ON agences.id_agence = vehicule.id_agence; ");
+        $request->execute();
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function deleteVehicule(){
+        
         //DELETE => DELETE
 
     }
@@ -90,5 +94,7 @@ $arrayAgence1 = $vehicule1->getAllAgence();
 // appeler la fonction addVehicule:
 if(isset($_POST['valider_vehicule'])){
     $vehicule1->addVehicule($_POST);
-    var_dump($_POST);
+    // var_dump($_POST);
 }
+
+$arrayAllVehiculeShow = $vehicule1->showVehicule();
