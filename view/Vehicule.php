@@ -2,6 +2,45 @@
 <?php require_once('./header.php');?>
 
 <h2>GESTION DES VEHICULES</h2>
+        <!--SELECT (READ) -->
+    <table class="table my-5 table1">
+      <thead>
+        <tr>
+          <th scope="col">Vehicule</th>
+          <th scope="col">Agence</th><!--FK-->
+          <th scope="col">titre</th>
+          <th scope="col">Marque</th>
+          <th scope="col">Model</th>
+          <th scope="col">Description</th>
+          <th scope="col">Photo</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <?php foreach ($arrayAllVehiculeShow as $value) : ?>
+        <tbody>
+          <tr>
+            <td><?= $value['id_vehicule'] ?></td>
+            <td><?= $value['ville'] ?></td><!--FK-->
+            <td><?= $value['titre_vehicule'] ?></td><!--FK-->
+            <td><?= $value['marque_vehicule'] ?></td>
+            <td><?= $value['modele_vehicule'] ?></td>
+            <td><?= $value['description_vehicule'] ?></td>
+            <td><img src="<?= $value['photo_vehicule']; ?>" alt="image" height="100" width="100"></td>
+            <td><?= $value['prix_journalier'] ?></td>      
+            <td>
+              <a href="?actions=supprimer&id=<?= $value['id_vehicule'];?>">Supprimer</a>
+              <a href="?actions=update">Modifier</a>
+              <a href="?actions=details">Détails</a>
+            </td>
+          </tr>
+        </tbody>
+      <?php  endforeach; ?>
+    </table>
+    <!--FIN SELECT (READ)-->
+
+
+
 
     <!--ADD (INSERT INTO)-->
     <form method="post" class="mt-2 mb-5">
@@ -37,43 +76,7 @@
     <!--FIN ADD (INSERT INTO)-->
 
 
-        <!--SELECT (READ) -->
-    <table class="table my-5 table1">
-      <thead>
-        <tr>
-          <th scope="col">Vehicule</th>
-          <th scope="col">Agence</th><!--FK-->
-          <th scope="col">titre</th>
-          <th scope="col">Marque</th>
-          <th scope="col">Model</th>
-          <th scope="col">Description</th>
-          <th scope="col">Photo</th>
-          <th scope="col">Prix</th>
-          <th scope="col">Actions</th>
-        </tr>
-      </thead>
-      <?php foreach ($arrayAllVehiculeShow as $value) : ?>
-        <tbody>
-          <tr>
-            <td><?= $value['id_vehicule'] ?></td>
-            <td><?= $value['ville'] ?></td><!--FK-->
-            <td><?= $value['titre_vehicule'] ?></td><!--FK-->
-            <td><?= $value['marque_vehicule'] ?></td>
-            <td><?= $value['modele_vehicule'] ?></td>
-            <td><?= $value['description_vehicule'] ?></td>
-            <td><img src="<?= $value['photo_vehicule']; ?>" alt="image" height="100" width="100"></td>
-            <td> 
-            <td><?= $value['prix_journalier'] ?></td>      
-            <td>
-              <a href="">Supprimer</a>
-              <a href=">">Modifier</a>
-              <a href="">Détails</a>
-            </td>
-          </tr>
-        </tbody>
-      <?php  endforeach; ?>
-    </table>-->
-    <!--FIN SELECT (READ)-->
+
 
 
 

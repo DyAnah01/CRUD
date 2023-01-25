@@ -46,6 +46,7 @@ class Vehicule
         $request->bindParam(':prix_journalier',$values['prix_journalier']);
 
         $request->execute();
+        header('Location: Vehicule.php');
     }//Fin function addVehicule (Create)
 
 
@@ -67,10 +68,13 @@ class Vehicule
         return $result;
     }
 
-    public function deleteVehicule(){
-        
-        //DELETE => DELETE
+    public function deleteVehicule($id){
 
+        //DELETE => DELETE
+        $request = $this->pdo()->prepare("DELETE FROM vehicule WHERE id_vehicule = ?");
+        $request->execute([$id]);
+
+        header('Location: Vehicule.php');
     }
 
     public function detailVehicule(){
@@ -98,3 +102,9 @@ if(isset($_POST['valider_vehicule'])){
 }
 
 $arrayAllVehiculeShow = $vehicule1->showVehicule();
+
+$actions = isset($_GET['actions']) ? $_GET['actions'] : null;
+
+if($actions == 'supprimer'){
+    $vehicule1->deleteVehicule($_GET['id']);
+} 
