@@ -1,5 +1,5 @@
 <?php require_once('../controller/agenceController.php') ?>
-<?php require_once('../controller/vehiculeController.php');?>
+<?php //require_once('../controller/vehiculeController.php');?>
 <?php require_once('./header.php');?>
 
     <!--SELECT (READ) -->
