@@ -25,13 +25,13 @@
             <td><?= $value['titre_vehicule'] ?></td><!--FK-->
             <td><?= $value['marque_vehicule'] ?></td>
             <td><?= $value['modele_vehicule'] ?></td>
-            <td><?= $value['description_vehicule'] ?></td>
+            <td width="250"><?= $value['description_vehicule'] ?></td>
             <td><img src="<?= $value['photo_vehicule']; ?>" alt="image" height="100" width="100"></td>
             <td><?= $value['prix_journalier'] ?></td>      
             <td>
               <a href="?actions=supprimer&id=<?= $value['id_vehicule'];?>">Supprimer</a>
               <a href="?actions=update">Modifier</a>
-              <a href="?actions=details">Détails</a>
+              <a href="vehiculeDetail.php?actions=details&id=<?= $value['id_vehicule'] ?>">Détails</a>
             </td>
           </tr>
         </tbody>
@@ -45,7 +45,7 @@
     <!--ADD (INSERT INTO)-->
     <form method="post" class="mt-2 mb-5">
 
-        <label for=""></label>
+        <label for="">Titre</label>
         <input type="texte" id="" name="titre_vehicule" placeholder="Titre de l'annonce" class="mb-2">
 
         <label for="">Agence</label>    

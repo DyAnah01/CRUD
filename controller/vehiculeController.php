@@ -69,17 +69,20 @@ class Vehicule
     }
 
     public function deleteVehicule($id){
-
         //DELETE => DELETE
         $request = $this->pdo()->prepare("DELETE FROM vehicule WHERE id_vehicule = ?");
         $request->execute([$id]);
 
+
         header('Location: Vehicule.php');
     }
 
-    public function detailVehicule(){
+    public function detailVehicule($id){
         //READ but just one (more information about one vehicule) => SELECT
-
+        $request = $this->pdo()->prepare("SELECT id_vehicule, ville, titre_vehicule, marque_vehicule, modele_vehicule, description_vehicule, photo_vehicule, prix_journalier FROM vehicule INNER JOIN agences ON agences.id_agence = vehicule.id_agence WHERE id_vehicule = ?;");
+        $request->execute([$id]);
+        $result = $request->fetch(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function updateVehicule(){
@@ -103,8 +106,14 @@ if(isset($_POST['valider_vehicule'])){
 
 $arrayAllVehiculeShow = $vehicule1->showVehicule();
 
+// $actions = $_GET['actions'] if $_GET['actions'] is set
+// Else $actions = null
 $actions = isset($_GET['actions']) ? $_GET['actions'] : null;
-
+ 
+//Call function delete
 if($actions == 'supprimer'){
     $vehicule1->deleteVehicule($_GET['id']);
-} 
+}
+
+// call function detail
+if($actions == 'details') $arrayOneVehiculeShow = $vehicule1->detailVehicule($_GET['id']);
