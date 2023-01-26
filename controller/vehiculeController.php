@@ -128,11 +128,9 @@ class Vehicule
         $request->bindParam(':id_vehicule', $values['id_vehicule']);
 
 
-        // print_r($values);
+        print_r($values);
 
         $request->execute();
-
-        // header('Location: Vehicule.php');
     }
 
 } //Fin class Vehicule
@@ -141,12 +139,11 @@ class Vehicule
 $vehicule1 = new Vehicule;
 
 $arrayAgence1 = $vehicule1->getAllAgence();
-// var_dump($arrayAgence1);
+
 
 // appeler la fonction addVehicule:
 if(isset($_POST['valider_vehicule'])){
     $vehicule1->addVehicule($_POST);
-    // var_dump($_POST);
 }
 
 $arrayAllVehiculeShow = $vehicule1->showVehicule();
@@ -168,5 +165,10 @@ if($actions == 'details') $arrayOneVehiculeShow = $vehicule1->detailVehicule($_G
 if($actions == 'update') $arrayUpdateVehicule = $vehicule1->detailVehicule($_GET['id']);
 //2->update
 
-if(isset($_POST['validerUpdateVehicule'])) $vehicule1->updateVehicule($_POST);
-
+if(isset($_POST['validerUpdateVehicule']))
+{
+   $vehicule1->updateVehicule($_POST);
+   header('Location: Vehicule.php');
+}
+ 
+if(isset($_POST['choice'])) echo "ERREUR";
