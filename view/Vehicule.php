@@ -43,6 +43,7 @@
 
 
     <!--ADD (INSERT INTO)-->
+    <h2 class="my-5">ADD VEHICULE</h2>
     <form method="post" class="mt-2 mb-5">
 
         <label for="">Titre</label>
@@ -55,7 +56,6 @@
           <?php endforeach ; ?>    
         </select>
         
-
         <label for="">Marque</label>
         <input type="text" name="marque_vehicule" placeholder="Marque" class="mb-2">
 

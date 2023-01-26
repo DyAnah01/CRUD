@@ -35,7 +35,11 @@
       <?php endforeach; ?>
     </table>
     <!--FIN SELECT (READ)-->
+
+
+
     <!--ADD (INSERT INTO)-->
+    <h2 class="my-5">ADD AGENCE</h2>
     <form method="post" class="mt-2 mb-5">
       <label for="">Titre</label>
       <input type="text" name="titre" placeholder="Titre" class="mb-2">

@@ -1,8 +1,17 @@
 <?php require_once('../controller/agenceController.php') ?>
-<?php //require_once('../controller/vehiculeController.php');?>
+<?php require_once('../controller/vehiculeController.php');?>
 <?php require_once('./header.php');?>
 
+    <div class=" d-flex justify-content-center"  >
+      <?php foreach ($arrayAllVehiculeShow as $value) : ?>
+        <div class="d-flex justify-content-center flex-column">
+        <img src="<?= $value['photo_vehicule']; ?>" alt="image voiture" width="200">         
+        </div>
+      <? endforeach; ?>
+    </div>
+
     <!--SELECT (READ) -->
+    <h2>Nos fournisseurs</h2>
     <table class="table my-5 table1">
       <thead>
         <tr>
