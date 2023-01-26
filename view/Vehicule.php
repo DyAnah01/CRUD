@@ -27,7 +27,7 @@
             <td><?= $value['modele_vehicule'] ?></td>
             <td width="250"><?= $value['description_vehicule'] ?></td>
             <td><img src="<?= $value['photo_vehicule']; ?>" alt="image" height="100" width="100"></td>
-            <td><?= $value['prix_journalier'] ?></td>      
+            <td><?= $value['prix_journalier'] ?> € </td>      
             <td>
               <a href="?actions=supprimer&id=<?= $value['id_vehicule'];?>">Supprimer</a>
               <a href="updateVehicule.php?actions=update&id=<?= $value['id_vehicule'] ?>">Modifier</a>
