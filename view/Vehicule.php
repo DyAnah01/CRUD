@@ -30,7 +30,7 @@
             <td><?= $value['prix_journalier'] ?></td>      
             <td>
               <a href="?actions=supprimer&id=<?= $value['id_vehicule'];?>">Supprimer</a>
-              <a href="?actions=update">Modifier</a>
+              <a href="updateVehicule.php?actions=update&id=<?= $value['id_vehicule'] ?>">Modifier</a>
               <a href="vehiculeDetail.php?actions=details&id=<?= $value['id_vehicule'] ?>">Détails</a>
             </td>
           </tr>

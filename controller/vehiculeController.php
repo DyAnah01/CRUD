@@ -60,6 +60,15 @@ class Vehicule
         //on return result
     }
 
+    public function getOneAgence(){
+        $request = $this->pdo()->prepare("SELECT * FROM agences WHERE" );
+        $request->execute();
+        ///on fetchAll , on stock dans result
+        $result = $request->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+        //on return result
+    }
+
     public function showVehicule(){
         //READ => SELECT
         $request = $this->pdo()->prepare("SELECT id_vehicule, ville, titre_vehicule, marque_vehicule, modele_vehicule, description_vehicule, photo_vehicule, prix_journalier FROM vehicule INNER JOIN agences ON agences.id_agence = vehicule.id_agence; ");
@@ -85,9 +94,45 @@ class Vehicule
         return $result;
     }
 
-    public function updateVehicule(){
+    public function updateVehicule($values)
+    {
         //UPDATE
+        // $id_agence = $values['id_agence'];
+        // $titre_vehicule = $values['titre_vehicule'];
+        // $marque_vehicule = $values['marque_vehicule'];
+        // $modele_vehicule = $values['modele_vehicule'];
+        // $description_vehicule = $values['description_vehicule'];
+        // $photo_vehicule = $values['photo_vehicule'];
+        // $prix_journalier = $values['prix_journalier'];
+        // $id_vehicule = $values['id_vehicule'];
 
+        $request = $this->pdo()->prepare("
+        UPDATE vehicule 
+        SET 
+        id_agence = :id_agence,  
+        titre_vehicule = :titre_vehicule, 
+        marque_vehicule = :marque_vehicule, 
+        modele_vehicule = :modele_vehicule, 
+        description_vehicule = :description_vehicule, 
+        photo_vehicule = :photo_vehicule, 
+        prix_journalier = :prix_journalier 
+        WHERE id_vehicule = :id_vehicule 
+        ");
+        $request->bindParam(':id_agence', $values['id_agence']);
+        $request->bindParam(':titre_vehicule', $values['titre_vehicule']);
+        $request->bindParam(':marque_vehicule', $values['marque_vehicule']);
+        $request->bindParam(':modele_vehicule', $values['modele_vehicule']);
+        $request->bindParam(':description_vehicule', $values['description_vehicule']);
+        $request->bindParam(':photo_vehicule', $values['photo_vehicule']);
+        $request->bindParam(':prix_journalier', $values['prix_journalier']);
+        $request->bindParam(':id_vehicule', $values['id_vehicule']);
+
+
+        // print_r($values);
+
+        $request->execute();
+
+        // header('Location: Vehicule.php');
     }
 
 } //Fin class Vehicule
@@ -117,3 +162,11 @@ if($actions == 'supprimer'){
 
 // call function detail
 if($actions == 'details') $arrayOneVehiculeShow = $vehicule1->detailVehicule($_GET['id']);
+
+/// Call update function
+//1->recup value
+if($actions == 'update') $arrayUpdateVehicule = $vehicule1->detailVehicule($_GET['id']);
+//2->update
+
+if(isset($_POST['validerUpdateVehicule'])) $vehicule1->updateVehicule($_POST);
+
