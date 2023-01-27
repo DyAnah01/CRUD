@@ -46,16 +46,17 @@ class Membre
         $request->bindParam(':date_enregistrement',$values['date_enregistrement']);
         // executer la requete
         $request->execute();
-
-
-
-
     }
 
     // public function s
 
-
-
-
-
 }
+
+$membre1 = new Membre;
+
+//For inscription : 
+//Call function addMember if $_POST['validerInscription'] is set
+if(isset($_POST['validerInscription'])){
+    $membre1->addMembre($_POST);
+}
+ 

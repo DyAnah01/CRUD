@@ -16,46 +16,58 @@
       <div class="modal-body">
 
           <form method="post" class="d-flex justify-content-center"><!-- form INSCRIPTION-->
+
               <h2 class="text-center">S'inscrire</h2>
-              <div class="mb-3">
+
+              <div class="mb-3"><!--name="pseudo"-->
                 <label for="pseudo" class="form-label">Pseudo</label>
                 <input type="text" class="form-control" id="pseudo" name="pseudo">
               </div>
-              <div class="mb-3">
+
+              <div class="mb-3"><!--name="mdp"-->
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="mdp">
               </div>
 
-              <div class="mb-3">
+              <div class="mb-3"><!--name="nom"-->
                 <label for="nom" class="form-label">nom</label>
                 <input type="text" class="form-control" id="nom" name="nom">
               </div>
               
-              <div class="mb-3">
+              <div class="mb-3"><!--name="prenom"-->
                 <label for="prenom" class="form-label">prenom</label>
                 <input type="text" class="form-control" id="prenom" name="prenom">
               </div>
-              <div class="mb-3">
+
+              <div class="mb-3"><!--name="email"-->
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
               </div>
-              <div>
+
+              <div><!--name="civilite"-->
               <div class="mb-3">Civilité</div>
-                <select class="form-select mb-3" aria-label="Default select example">
-                  <!--<option selected>Open this select menu</option>-->
-                  <option value="f">Femme</option>
-                  <option value="m">Homme</option>
+                <select class="form-select mb-3" aria-label="Default select example" name="civilite">
+                  <option selected>Select Civilité</option>
+                  <option name="f" value="f">Femme</option>
+                  <option name="m" value="m">Homme</option>
                 </select>
               </div>
-              <div class="mb-3">Statut</div>
-                <select class="form-select mb-3" aria-label="Default select example">
-                  <!--<option selected>Open this select menu</option>-->
-                  <option value="1">Admin</option>
-                  <option value="2">User</option>
+
+              <div class="mb-3">Select Statut</div><!--name="statut"-->
+                <select class="form-select mb-3" aria-label="Default select example" name="statut">
+                  <option selected>Statut</option>
+                  <option name="1" value="1">Admin</option>
+                  <option name="2" value="2">User</option>
                 </select>
               </div>
-              <div class="modal-footer">
-                <button class="btn btn-primary">Enregistrer</button> 
+
+              <div class="mb-3 mx-3"><!--name="date_enregistrement"-->
+                <label for="dateInscription" class="form-label">Date d'inscription</label>
+                <input type="date" class="form-control" id="dateInscription" name="date_enregistrement">
+              </div>
+
+              <div class="modal-footer"><!--name="validerInscription"-->
+                <button name="validerInscription" class="btn btn-primary">Enregistrer</button> 
               </div>
             </form> <!--END FORM INSCRIPTION-->
       </div>
