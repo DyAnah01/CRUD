@@ -60,8 +60,8 @@ if(isset($_POST['validerInscription'])){
 }
 
 if(isset($_POST['validerCo'])){
+
     var_dump($_POST);
 } 
-
 
  

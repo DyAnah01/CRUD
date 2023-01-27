@@ -22,7 +22,7 @@
 
     <div class="container">
     <!--SELECT (READ) AFFICHE sur la page d'acceuil le tableau des agences sans les actions--> 
-    <h2 class="my-5">Nos fournisseurs</h2>
+    <h2 class="my-5 text-center">Nos fournisseurs</h2>
         <table class="table my-5 table1">
           <thead>
             <tr class="text-center">
