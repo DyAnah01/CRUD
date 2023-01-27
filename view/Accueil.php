@@ -114,13 +114,13 @@
     <div class=" d-flex justify-content-center"  >
       <?php foreach ($arrayAllVehiculeShow as $value) : ?>
         <div class="d-flex justify-content-center flex-column">
-        <img src="<?= $value['photo_vehicule']; ?>" alt="image voiture" width="200">         
+        <img src="<?= $value['photo_vehicule']; ?>" alt="image voiture" width="200" height="300" class="mx-2">         
         </div>
       <? endforeach; ?>
     </div>
 
     <!--SELECT (READ) -->
-    <h2>Nos fournisseurs</h2>
+    <h2 class="my-5">Nos fournisseurs</h2>
     <table class="table my-5 table1">
       <thead>
         <tr>

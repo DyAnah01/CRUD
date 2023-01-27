@@ -3,17 +3,9 @@
 
 
 <form method="post" class="mt-2 mb-5">
-
-    
-
     <input type="texte" id="" name="titre_vehicule" value="<?= $arrayUpdateVehicule['titre_vehicule'] ;?>" placeholder="Titre de l'annonce" class="mb-2">
 
-    <select name="id_agence" id="" class="mb-2">
-            <option value="<?= $arrayUpdateVehicule['ville'] ?>" name="choice" ><?= $arrayUpdateVehicule['ville'] ?></option>
-        <?php foreach ($arrayAgence1 as $value) : ?>
-            <option value="<?= $value['id_agence'] ?>"><?= $value['ville'] ?></option>
-        <?php endforeach; ?>
-    </select>
+
 
     <input type="text" name="marque_vehicule" value="<?= $arrayUpdateVehicule['marque_vehicule']; ?>" placeholder="Marque" class="mb-2" >
 
@@ -26,6 +18,13 @@
     <textarea name="description_vehicule" id="" cols="30" rows="10" placeholder="Description" class="mb-2"><?= $arrayUpdateVehicule['description_vehicule']; ?></textarea>
 
     <input type="hidden" name="id_vehicule" value="<?= $arrayUpdateVehicule['id_vehicule'] ?>">
+
+    <select name="id_agence" id="" class="mb-2">
+        <option value="<?= $arrayUpdateVehicule['ville'] ?>" name="choice" ><?= $arrayUpdateVehicule['ville'] ?></option>
+        <?php foreach ($arrayAgence1 as $value) : ?>
+            <option value="<?= $value['id_agence'] ?>"><?= $value['ville'] ?></option>
+        <?php endforeach; ?>
+    </select>
 
     <button name="validerUpdateVehicule" class="mb-2">Enregistrer</button>
 

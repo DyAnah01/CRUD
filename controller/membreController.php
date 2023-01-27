@@ -36,7 +36,7 @@ class Membre
         
     }
 
-    public function s
+    // public function s
 
 
 
