@@ -32,8 +32,24 @@ class Membre
 
     } //fin function connection with database
 
-    public function addMembre(){
-        
+    public function addMembre($values){
+        //prepare request
+        $request = $this->pdo()->prepare("INSERT INTO membre VALUES (NULL, :pseudo, :mdp, :nom, :prenom, :email, :civilite, :statut, :date_enregistrement)");
+        // parametrer les données
+        $request->bindParam(':pseudo',$values['pseudo']);
+        $request->bindParam(':mdp',$values['mdp']);
+        $request->bindParam(':nom',$values['nom']);
+        $request->bindParam(':prenom',$values['prenom']);
+        $request->bindParam(':email',$values['email']);
+        $request->bindParam(':civilite',$values['civilite']);
+        $request->bindParam(':statut',$values['statut']);
+        $request->bindParam(':date_enregistrement',$values['date_enregistrement']);
+        // executer la requete
+        $request->execute();
+
+
+
+
     }
 
     // public function s
