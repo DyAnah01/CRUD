@@ -48,7 +48,6 @@ class Membre
         $request->execute();
     }
 
-    // public function 
 
 }
 
@@ -57,8 +56,12 @@ $membre1 = new Membre;
 //For inscription : 
 //Call function addMember if $_POST['validerInscription'] is set
 if(isset($_POST['validerInscription'])){
-    var_dump($_POST['validerInscription']);
     $membre1->addMembre($_POST);
-
 }
+
+if(isset($_POST['validerCo'])){
+    var_dump($_POST);
+} 
+
+
  

@@ -164,11 +164,6 @@ if($actions == 'details') $arrayOneVehiculeShow = $vehicule1->detailVehicule($_G
 //1->recup value
 if($actions == 'update') $arrayUpdateVehicule = $vehicule1->detailVehicule($_GET['id']);
 //2->update
-
-if(isset($_POST['validerUpdateVehicule']))
-{
-   $vehicule1->updateVehicule($_POST);
-   header('Location: Vehicule.php');
-}
+if(isset($_POST['validerUpdateVehicule'])) $vehicule1->updateVehicule($_POST);
  
-if(isset($_POST['choice'])) echo "ERREUR";
+// if(isset($_POST['choice'])) echo "ERREUR";

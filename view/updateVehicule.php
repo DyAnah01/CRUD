@@ -5,8 +5,6 @@
 <form method="post" class="mt-2 mb-5">
     <input type="texte" id="" name="titre_vehicule" value="<?= $arrayUpdateVehicule['titre_vehicule'] ;?>" placeholder="Titre de l'annonce" class="mb-2">
 
-
-
     <input type="text" name="marque_vehicule" value="<?= $arrayUpdateVehicule['marque_vehicule']; ?>" placeholder="Marque" class="mb-2" >
 
     <input type="text" name="modele_vehicule" value="<?= $arrayUpdateVehicule['modele_vehicule']; ?>" placeholder="Model" class="mb-2">
@@ -20,7 +18,7 @@
     <input type="hidden" name="id_vehicule" value="<?= $arrayUpdateVehicule['id_vehicule'] ?>">
 
     <select name="id_agence" id="" class="mb-2">
-        <option value="<?= $arrayUpdateVehicule['ville'] ?>" name="choice" ><?= $arrayUpdateVehicule['ville'] ?></option>
+        <option selected value="<?= $arrayUpdateVehicule['ville'] ?>" name="id_agence" ><?= $arrayUpdateVehicule['ville'] ?></option>
         <?php foreach ($arrayAgence1 as $value) : ?>
             <option value="<?= $value['id_agence'] ?>"><?= $value['ville'] ?></option>
         <?php endforeach; ?>

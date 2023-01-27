@@ -136,28 +136,33 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
             <form method="post"> <!--FORM CONNECTION-->
+
               <h2 class="text-center">Se connecter</h2>
-              <div class="mb-3">
-                <label for="pseudo" class="form-label">Pseudo</label>
-                <input type="text" class="form-control" id="pseudo" name="pseudo">
+
+              <div class="mb-3"><!--name="email"-->
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
               </div>
               
-              <div class="mb-3">
+              <div class="mb-3"><!--name="mdpco"-->
                 <label for="mdpco" class="form-label">Password</label>
                 <input type="password" class="form-control" id="mdpco" name="mdpco">
               </div>
+
               <div class="d-flex flex-column mb-3">
                   <p>Pas de compte ? </p>
                   <a class="" href="#" data-bs-toggle="modal" data-bs-target="#modalInscription">S'inscrire</a>
               </div>
-              <button class="btn btn-primary">Enregistrer</button>              
+
+              <div class="modal-footer">
+                  <button name="validerCo" class="btn btn-primary">Enregistrer</button> 
+              </div>
+
             </form><!--END FORM CONNECTION-->
       </div>
-      <div class="modal-footer">
-        <!--<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-        <button type="button" class="btn btn-primary">Valider</button>
-      </div>
+
     </div>
   </div>
 </div><!-- END Modal CONNECTION -->
