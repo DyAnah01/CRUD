@@ -24,7 +24,7 @@
             <td><?= $value['ville'] ?></td>
             <td><?= $value['cp'] ?></td>
             <td width="250"><?= $value['description'] ?></td>
-            <td><img src="<?= $value['photo']; ?>" alt="image" height="100" width="100"></td>
+            <td><img src="<?= $value['photo']; ?>" alt="image" height="100" width="80"></td>
             <td>
               <a href="?action=supprimer&id=<?= $value['id_agence'] ?>">Supprimer</a>
               <a href="updateAgence.php?action=modifier&id=<?= $value['id_agence'] ?>">Modifier</a>
